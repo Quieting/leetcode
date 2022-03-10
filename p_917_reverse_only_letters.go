@@ -34,6 +34,7 @@ func reverseOnlyLetters(s string) string {
 	}
 	bs := make([]byte, len(s))
 	i, j := 0, len(s)-1
+
 	for i <= j {
 		if isLetter(s[i]) && isLetter(s[j]) {
 			bs[i] = s[j]
