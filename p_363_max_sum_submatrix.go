@@ -1,5 +1,10 @@
 package leetcode
 
+import (
+	"math"
+	"math/rand"
+)
+
 // maxSumSubmatrix 矩形区域不超过 K 的最大数值和
 // 给你一个 m x n 的矩阵 matrix 和一个整数 k ，找出并返回矩阵内部矩形区域的不超过 k 的最大数值和。
 // 题目数据保证总会存在一个数值和不超过 k 的矩形区域。
@@ -78,4 +83,96 @@ func prefixSum(s [][]int) [][]int {
 	}
 
 	return ns
+}
+
+type node struct {
+	ch       [2]*node // 一个元素值比第二个元素值小
+	priority int      // 此变量意义不懂
+	val      int
+}
+
+func (o *node) cmp(b int) int {
+	switch {
+	case b < o.val:
+		return 0
+	case b > o.val:
+		return 1
+	default:
+		return -1
+	}
+}
+
+func (o *node) rotate(d int) *node {
+	x := o.ch[d^1]
+	o.ch[d^1] = x.ch[d]
+	x.ch[d] = o
+	return x
+}
+
+type treap struct {
+	root *node
+}
+
+func (t *treap) _put(o *node, val int) *node {
+	if o == nil {
+		return &node{priority: rand.Int(), val: val}
+	}
+	if d := o.cmp(val); d >= 0 { // val 值等于节点值
+		o.ch[d] = t._put(o.ch[d], val)
+		if o.ch[d].priority > o.priority {
+			o = o.rotate(d ^ 1)
+		}
+	}
+	return o
+}
+
+func (t *treap) put(val int) {
+	t.root = t._put(t.root, val)
+}
+
+// lowerBound 返回大于等于 val值 的最近节点
+func (t *treap) lowerBound(val int) (lb *node) {
+	for o := t.root; o != nil; {
+		switch c := o.cmp(val); {
+		case c == 0: // 节点值大于val
+			lb = o
+			o = o.ch[0]
+		case c > 0: // 节点值小于val
+			o = o.ch[1]
+		default: // 节点值等于val
+			return o
+		}
+	}
+	return
+}
+
+// todo：官方题解，没看懂。不理解 treap 的作用和意义
+func maxSumSubmatrix1(matrix [][]int, k int) int {
+	ans := math.MinInt64
+	for i := range matrix { // 枚举上边界
+		sum := make([]int, len(matrix[0]))
+		for _, row := range matrix[i:] { // 枚举下边界
+			for c, v := range row {
+				sum[c] += v // 更新每列的元素和
+			}
+			t := &treap{}
+			t.put(0)
+			s := 0
+			for _, v := range sum {
+				s += v
+				if lb := t.lowerBound(s - k); lb != nil {
+					ans = max(ans, s-lb.val)
+				}
+				t.put(s)
+			}
+		}
+	}
+	return ans
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }

@@ -95,6 +95,7 @@ func Test_maxSumSubmatrix(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			tt.want = maxSumSubmatrix1(tt.args.matrix, tt.args.k)
 			if got := maxSumSubmatrix(tt.args.matrix, tt.args.k); got != tt.want {
 				t.Errorf("maxSumSubmatrix() = %v, want %v", got, tt.want)
 			}
