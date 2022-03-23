@@ -37,4 +37,4 @@ func optimalDivision(nums []int) string {
 ```
 
 ### 目录
-* 字符串Z型变换(p_6_convert_z_string.go)
+* [字符串Z型变换](p_6_convert_z_string.go)
