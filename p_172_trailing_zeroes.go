@@ -22,21 +22,6 @@ package leetcode
 // 输入：n = 0
 // 输出：0
 //
-// n足够大的时候总会出错
-func trailingZeroes(n int) int {
-	zeroNum := 0
-	sum := 1
-	for i := 1; i <= n; i++ {
-		sum *= i
-		for sum%10 == 0 {
-			zeroNum++
-			sum /= 10
-		}
-		sum %= 1000000
-	}
-	return zeroNum
-}
-
 // trailingZeroes1 官方解析
 // 寻找质因数 2 和 5 的对数，因为 质因数 5 的个数小于等于质因数 2 的个数，因此只需要寻找质因数 5 的个数
 func trailingZeroes1(n int) (ans int) {
@@ -44,6 +29,17 @@ func trailingZeroes1(n int) (ans int) {
 		for x := i; x%5 == 0; x /= 5 {
 			ans++
 		}
+	}
+	return
+}
+
+// trailingZeroes2 官方解析
+// 对于 n! 质因数 5 的个数计算规律:
+// 每隔 5 个数，出现一个 5，每隔 25 个数，出现 2 个 5，每隔 125 个数，出现 3 个 5... 以此类推。
+func trailingZeroes2(n int) (ans int) {
+	for n > 0 {
+		n /= 5
+		ans += n
 	}
 	return
 }

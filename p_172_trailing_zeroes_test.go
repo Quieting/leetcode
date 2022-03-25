@@ -53,7 +53,7 @@ func Test_trailingZeroes(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			tt.want = trailingZeroes1(tt.args.n)
-			if got := trailingZeroes(tt.args.n); got != tt.want {
+			if got := trailingZeroes2(tt.args.n); got != tt.want {
 				t.Errorf("trailingZeroes() = %v, want %v", got, tt.want)
 			}
 		})
