@@ -1,6 +1,6 @@
 package leetcode
 
-// 172. 阶乘后的零
+// trailingZeroes. 阶乘后的零
 // 给定一个整数 n ，返回 n! 结果中尾随零的数量。
 //
 // 提示 n! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1
@@ -37,6 +37,8 @@ func trailingZeroes(n int) int {
 	return zeroNum
 }
 
+// trailingZeroes1 官方解析
+// 寻找质因数 2 和 5 的对数，因为 质因数 5 的个数小于等于质因数 2 的个数，因此只需要寻找质因数 5 的个数
 func trailingZeroes1(n int) (ans int) {
 	for i := 5; i <= n; i += 5 {
 		for x := i; x%5 == 0; x /= 5 {
