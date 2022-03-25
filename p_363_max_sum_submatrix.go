@@ -28,7 +28,7 @@ import (
 //
 //
 func maxSumSubmatrix(matrix [][]int, k int) int {
-	matrix = prefixSum(matrix)
+	matrix = prefixSum(addRow(addColumn(matrix, 0), 0))
 	maxK := k + 1
 	points := []struct {
 		row    int
@@ -61,29 +61,29 @@ func maxSumSubmatrix(matrix [][]int, k int) int {
 	return maxK
 }
 
-// prefixSum 求取二维数组前缀和，返回数组将比原数组增加一行一列方便后续计算
-func prefixSum(s [][]int) [][]int {
-	if len(s) == 0 {
-		return nil
-	}
-
-	row := len(s) + 1
-	column := len(s[0]) + 1
-
-	ns := make([][]int, len(s)+1)
-	for r := 0; r < row; r++ {
-		ns[r] = make([]int, column)
-	}
-
-	// 计算前缀和
-	for r := 1; r < row; r++ {
-		for c := 1; c < column; c++ {
-			ns[r][c] = ns[r][c-1] + ns[r-1][c] + s[r-1][c-1] - ns[r-1][c-1] - ns[0][0]
-		}
-	}
-
-	return ns
-}
+// // prefixSum 求取二维数组前缀和，返回数组将比原数组增加一行一列方便后续计算
+// func prefixSum(s [][]int) [][]int {
+// 	if len(s) == 0 {
+// 		return nil
+// 	}
+//
+// 	row := len(s) + 1
+// 	column := len(s[0]) + 1
+//
+// 	ns := make([][]int, len(s)+1)
+// 	for r := 0; r < row; r++ {
+// 		ns[r] = make([]int, column)
+// 	}
+//
+// 	// 计算前缀和
+// 	for r := 1; r < row; r++ {
+// 		for c := 1; c < column; c++ {
+// 			ns[r][c] = ns[r][c-1] + ns[r-1][c] + s[r-1][c-1] - ns[r-1][c-1]
+// 		}
+// 	}
+//
+// 	return ns
+// }
 
 type node struct {
 	ch       [2]*node // 一个元素值比第二个元素值小

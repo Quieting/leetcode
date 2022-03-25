@@ -46,6 +46,7 @@ func optimalDivision(nums []int) string {
 * [553.最优除法](p_553_optimal_division.go)
 * [564.寻找最近的回文数](p_564_nearest_palindromic.go)
 * [589.N 叉树的前序遍历](p_589_preorder.go)
+* [661.图片平滑器](p_661_image_smoother.go)
 * [917.仅仅反转字符串](p_917_reverse_only_letters.go)
 * [2038.如果相邻两个颜色均相同则删除当前颜色](p_2038_winner_of_game.go)
 * [2044.统计按位或能得到最大值的子集数目](p_2044_count_max_or_subsets.go)
