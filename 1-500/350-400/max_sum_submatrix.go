@@ -3,6 +3,8 @@ package leetcode
 import (
 	"math"
 	"math/rand"
+
+	"github.com/Quieting/leetcode/slice"
 )
 
 // maxSumSubmatrix 矩形区域不超过 K 的最大数值和
@@ -28,7 +30,7 @@ import (
 //
 //
 func maxSumSubmatrix(matrix [][]int, k int) int {
-	matrix = prefixSum(addRow(addColumn(matrix, 0), 0))
+	matrix = slice.PrefixSum(slice.AddRow(slice.AddColumn(matrix, 0), 0))
 	maxK := k + 1
 	points := []struct {
 		row    int

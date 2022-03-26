@@ -1,7 +1,7 @@
-package leetcode
+package slice
 
-// addUpRow 在二维数组下标 index 行处添加一行， 如果 len(matrix) == 0 返回空数组
-func addRow(matrix [][]int, index int) [][]int {
+// AddRow 在二维切片下标 index 行处添加一行， 如果 len(matrix) == 0 返回空数组
+func AddRow(matrix [][]int, index int) [][]int {
 	if len(matrix) == 0 {
 		return nil
 	}
@@ -25,8 +25,8 @@ func addRow(matrix [][]int, index int) [][]int {
 	return ns
 }
 
-// addColumn 在二维数组 index 列出添加一列， 如果 len(matrix) == 0 返回空数组
-func addColumn(matrix [][]int, index int) [][]int {
+// AddColumn 在二维切片 index 列出添加一列， 如果 len(matrix) == 0 返回空数组
+func AddColumn(matrix [][]int, index int) [][]int {
 	if len(matrix) == 0 {
 		return nil
 	}
@@ -52,8 +52,8 @@ func addColumn(matrix [][]int, index int) [][]int {
 	return ns
 }
 
-// prefixSum 求取二维数组前缀和
-func prefixSum(s [][]int) [][]int {
+// PrefixSum 求取二维切片前缀和
+func PrefixSum(s [][]int) [][]int {
 	if len(s) == 0 {
 		return nil
 	}

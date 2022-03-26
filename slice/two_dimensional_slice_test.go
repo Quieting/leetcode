@@ -1,4 +1,4 @@
-package leetcode
+package slice
 
 import (
 	"reflect"
@@ -46,7 +46,7 @@ func Test_addColumn(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := addColumn(tt.args.matrix, tt.args.index); !reflect.DeepEqual(got, tt.want) {
+			if got := AddColumn(tt.args.matrix, tt.args.index); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("addColumn() = %v, want %v", got, tt.want)
 			}
 		})
@@ -96,8 +96,41 @@ func Test_addRow(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := addRow(tt.args.matrix, tt.args.index); !reflect.DeepEqual(got, tt.want) {
+			if got := AddRow(tt.args.matrix, tt.args.index); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("addRow() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_prefixSum(t *testing.T) {
+	type args struct {
+		s [][]int
+	}
+	tests := []struct {
+		name string
+		args args
+		want [][]int
+	}{
+		{
+			name: "示例1",
+			args: args{
+				s: [][]int{
+					{1, 2, 3, 4},
+					{5, 6, 7, 8},
+				},
+			},
+			want: [][]int{
+				{0, 0, 0, 0, 0},
+				{0, 1, 3, 6, 10},
+				{0, 6, 14, 24, 36},
+			},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := PrefixSum(tt.args.s); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("prefixSum() = %v, want %v", got, tt.want)
 			}
 		})
 	}
