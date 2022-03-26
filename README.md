@@ -47,6 +47,7 @@ func optimalDivision(nums []int) string {
 * [553.最优除法](p_553_optimal_division.go)
 * [564.寻找最近的回文数](p_564_nearest_palindromic.go)
 * [589.N 叉树的前序遍历](p_589_preorder.go)
+* [611.有效三角形的个数](p_611_triangle_number.go)
 * [661.图片平滑器](p_661_image_smoother.go)
 * [682.棒球比赛](p_682_cal_points.go)
 * [917.仅仅反转字符串](p_917_reverse_only_letters.go)
