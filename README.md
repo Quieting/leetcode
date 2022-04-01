@@ -15,7 +15,9 @@
 * [611.有效三角形的个数](500-1000/600-650/triangle_number.go)
 * [661.图片平滑器](500-1000/650-700/image_smoother.go)
 * [682.棒球比赛](500-1000/650-700/cal_points.go)
-* [917.仅仅反转字符串](500-1000/900-950/reverse_only_letters.go)
+* [838.推多米诺](500-1000/800-850/push_dominoes.go)
+* [917.仅仅反转字符串](500-1000/900-950/reverse_only_letters.go) todo
+* [954.二倍数对数组](500-1000/950-1000/can_reorder_doubled.go)
 * [2038.如果相邻两个颜色均相同则删除当前颜色](2000-2500/2000-2050/winner_of_game.go)
 * [2044.统计按位或能得到最大值的子集数目](2000-2500/2000-2050/count_max_or_subsets.go)
 * [2049.统计最高分的节点数目](2000-2500/2000-2050/count_highest_score_nodes.go)
