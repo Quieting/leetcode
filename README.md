@@ -4,6 +4,7 @@
 * [6.字符串Z型变换](1-500/1-50/convert_z_string.go)
 * [172.阶乘后的零](1-500/150-200/trailing_zeroes.go)
 * [219.存在重复元素](1-500/200-250/contains_nearby_duplicate.go)
+* [357.统计各位数字都不同的数字个数](1-500/350-400/count_numbers_with_unique_digits.go)
 * [363.矩形区域不超过 K 的最大数值和](1-500/350-400/max_sum_submatrix.go)
 * [413.等差数列划分 - 子数组](1-500/400-450/number_of_arithmetic_slices.go)
 * [440.字典序的第K小数字](1-500/400-450/find_kth_number.go)
