@@ -16,6 +16,7 @@
 * [611.有效三角形的个数](500-1000/600-650/triangle_number.go)
 * [661.图片平滑器](500-1000/650-700/image_smoother.go)
 * [682.棒球比赛](500-1000/650-700/cal_points.go)
+* [806.写字符串需要的行数](500-1000/800-850/number_of_lines.go)
 * [838.推多米诺](500-1000/800-850/push_dominoes.go)
 * [917.仅仅反转字符串](500-1000/900-950/reverse_only_letters.go) todo
 * [954.二倍数对数组](500-1000/950-1000/can_reorder_doubled.go)
