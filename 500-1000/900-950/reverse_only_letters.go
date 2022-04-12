@@ -58,5 +58,5 @@ func reverseOnlyLetters(s string) string {
 }
 
 func isLetter(s uint8) bool {
-	return (s > 64 && s < 91) || (s < 123 && s > 96)
+	return (s >= 'a' && s <= 'z') || (s >= 'A' && s <= 'Z')
 }
