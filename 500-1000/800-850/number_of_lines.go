@@ -46,6 +46,7 @@ func numberOfLines(widths []int, s string) []int {
 	return []int{lines, num}
 }
 
+// numberOfLines1 官方题解
 func numberOfLines1(widths []int, s string) []int {
 	const maxWidth = 100
 	lines, width := 1, 0
