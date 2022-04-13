@@ -27,7 +27,7 @@ func Test_reverseOnlyLetters(t *testing.T) {
 			want: "Qedo1ct-eeLg=ntse-T!",
 		},
 		{
-			name: "第一次执行失败",
+			name: "示例4",
 			args: args{s: "-"},
 			want: "-",
 		},
