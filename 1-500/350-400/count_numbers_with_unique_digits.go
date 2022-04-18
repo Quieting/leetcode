@@ -32,7 +32,7 @@ func countNumbersWithUniqueDigits(n int) int {
 	return ans
 }
 
-// findNumbersWithUniqueDigits 返回嘛n位数中各位数组都不同的数字个数
+// findNumbersWithUniqueDigits 返回 n 位数中各位数字都不同的数字个数
 func findNumbersWithUniqueDigits(n int) int {
 	if n == 1 {
 		return 10
