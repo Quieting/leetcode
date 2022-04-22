@@ -9,6 +9,7 @@
 * [363.矩形区域不超过 K 的最大数值和](1-500/350-400/max_sum_submatrix.go)
 * [386.字典序排数](1-500/350-400/lexical_order.go)
 * [388.文件的最长绝对路径](1-500/350-400/length_longest_path.go)
+* [396.旋转函数](1-500/350-400/max_rotate_function.go)
 * [413.等差数列划分 - 子数组](1-500/400-450/number_of_arithmetic_slices.go)
 * [440.字典序的第K小数字](1-500/400-450/find_kth_number.go)
 * [446.等差数列划分 II - 子序列](1-500/400-450/number_of_arithmetic_slices2.go)
