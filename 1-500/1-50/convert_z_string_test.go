@@ -49,7 +49,7 @@ func Test_convertZString(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			tt.want = convertZString1(tt.args.s, tt.args.rows)
+			tt.want = convertZString2(tt.args.s, tt.args.rows)
 			if got := convertZString(tt.args.s, tt.args.rows); got != tt.want {
 				t.Errorf("convertZString() = %v, want %v", got, tt.want)
 			}

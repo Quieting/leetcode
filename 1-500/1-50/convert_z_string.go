@@ -127,3 +127,24 @@ func convertZString1(s string, rows int) string {
 	}
 	return string(ns)
 }
+
+func convertZString2(s string, rows int) string {
+	if rows < 2 {
+		return s
+	}
+	ans := make([]string, rows)
+	i, flag := 0, -1
+	for _, val := range s {
+		ans[i] += string(val)
+		if i == rows-1 || i == 0 {
+			flag = -flag
+		}
+		i += flag
+	}
+
+	res := ""
+	for _, val := range ans {
+		res += val
+	}
+	return res
+}
