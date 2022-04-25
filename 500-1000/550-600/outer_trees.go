@@ -26,7 +26,8 @@ package leetcode
 //
 // 即使树都在一条直线上，你也需要先用绳子包围它们。
 //
-//
+// 阅读官方题解后解出
+// 关键词：凸包 向量叉积
 func outerTrees(trees [][]int) [][]int {
 	tLen := len(trees)
 	if tLen < 4 {
