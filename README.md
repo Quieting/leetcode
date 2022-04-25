@@ -18,6 +18,7 @@
 * [537.复数乘法](500-1000/500-550/complex_number_multiply.go)
 * [553.最优除法](500-1000/550-600/optimal_division.go)
 * [564.寻找最近的回文数](500-1000/550-600/nearest_palindromic.go)
+* [587.安装栅栏](500-1000/550-600/outer_trees.go)
 * [589.N 叉树的前序遍历](500-1000/550-600/preorder.go)
 * [611.有效三角形的个数](500-1000/600-650/triangle_number.go)
 * [661.图片平滑器](500-1000/650-700/image_smoother.go)
