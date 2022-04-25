@@ -28,6 +28,8 @@ package leetcode
 //
 // 阅读官方题解后解出
 // 关键词：凸包 向量叉积
+// 相关知识点:
+//  1.两向量的数量积(向量叉积)定义为其中一条向量在另一条向量方向上的正投影的长度与被投影向量的长度之积，若投影出的向量与被投影向量方向一致则此值为正，若相反则此值为负。
 func outerTrees(trees [][]int) [][]int {
 	tLen := len(trees)
 	if tLen < 4 {
@@ -76,7 +78,7 @@ func outerTrees(trees [][]int) [][]int {
 	return ans
 }
 
-// 计算向量 pq, pr 的向量积
+// 计算向量 pq, qr 的向量积
 func cross(p, q, r []int) int {
 	return (q[0]-p[0])*(r[1]-q[1]) - (q[1]-p[1])*(r[0]-q[0])
 }
