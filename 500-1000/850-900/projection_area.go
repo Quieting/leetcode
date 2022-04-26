@@ -43,8 +43,12 @@ func projectionArea(grid [][]int) int {
 
 	for i := 0; i < gLen; i++ {
 		for j := 0; j < gLen; j++ {
-			rows[i] = max(rows[i], grid[i][j])
-			columns[j] = max(columns[j], grid[i][j])
+			val := grid[i][j]
+			rows[i] = max(rows[i], val)
+			columns[j] = max(columns[j], val)
+			if val == 0 {
+				ans--
+			}
 		}
 	}
 
@@ -54,6 +58,27 @@ func projectionArea(grid [][]int) int {
 
 	for _, val := range columns {
 		ans += val
+	}
+	return ans
+}
+
+func projectionArea1(grid [][]int) int {
+	gLen := len(grid)
+
+	row := 0    // 当前行最大面积
+	column := 0 // 当前列最大面积
+	ans := 0
+	for i := 0; i < gLen; i++ {
+		row = 0
+		column = 0
+		for j := 0; j < gLen; j++ {
+			row = max(row, grid[i][j])
+			column = max(column, grid[j][i])
+			if grid[i][j] > 0 {
+				ans++
+			}
+		}
+		ans = ans + column + row
 	}
 	return ans
 }
