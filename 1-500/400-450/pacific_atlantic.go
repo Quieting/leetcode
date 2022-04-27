@@ -40,81 +40,57 @@ func pacificAtlantic(heights [][]int) [][]int {
 	return ans
 }
 
-// followPacific heights 能流向太平洋
-func followPacific(heights [][]int) [][]bool {
-	var dfs func(i, j int, res [][]bool)
-	dfs = func(i, j int, res [][]bool) {
-		if res[i][j] { // 已访问过
-			return
-		}
-
-		res[i][j] = true // 能进入表示能流入大西洋
-
-		// 向四周扩散
-		if i > 0 && heights[i][j] <= heights[i-1][j] { // 上
-			dfs(i-1, j, res)
-		}
-		if i < len(heights)-1 && heights[i][j] <= heights[i+1][j] { // 下
-			dfs(i+1, j, res)
-		}
-
-		if j > 0 && heights[i][j] <= heights[i][j-1] { // 左
-			dfs(i, j-1, res)
-		}
-		if j < len(heights[i])-1 && heights[i][j] <= heights[i][j+1] { // 右
-			dfs(i, j+1, res)
-		}
+func dfs(i, j int, heights [][]int, res [][]bool) {
+	if res[i][j] { // 已访问过
+		return
 	}
 
+	res[i][j] = true // 能进入表示能流入大西洋
+
+	// 向四周扩散
+	if i > 0 && heights[i][j] <= heights[i-1][j] { // 上
+		dfs(i-1, j, heights, res)
+	}
+	if i < len(heights)-1 && heights[i][j] <= heights[i+1][j] { // 下
+		dfs(i+1, j, heights, res)
+	}
+
+	if j > 0 && heights[i][j] <= heights[i][j-1] { // 左
+		dfs(i, j-1, heights, res)
+	}
+	if j < len(heights[i])-1 && heights[i][j] <= heights[i][j+1] { // 右
+		dfs(i, j+1, heights, res)
+	}
+}
+
+// followPacific heights 能流向太平洋
+func followPacific(heights [][]int) [][]bool {
 	res := make([][]bool, len(heights))
 	for i := range res {
 		res[i] = make([]bool, len(heights[i]))
 	}
 
 	for i := 0; i < len(heights[0]); i++ { // 第一行
-		dfs(0, i, res)
+		dfs(0, i, heights, res)
 	}
 	for i := 0; i < len(heights); i++ { // 第一列
-		dfs(i, 0, res)
+		dfs(i, 0, heights, res)
 	}
 	return res
 }
 
 // followAtlantic heights 流向大西洋
 func followAtlantic(heights [][]int) [][]bool {
-	var dfs func(i, j int, res [][]bool)
-	dfs = func(i, j int, res [][]bool) {
-		if res[i][j] { // 已访问过
-			return
-		}
-
-		res[i][j] = true // 能进入表示能流入大西洋
-
-		// 向四周扩散
-		if i > 0 && heights[i][j] <= heights[i-1][j] { // 上
-			dfs(i-1, j, res)
-		}
-		if i < len(heights)-1 && heights[i][j] <= heights[i+1][j] { // 下
-			dfs(i+1, j, res)
-		}
-		if j > 0 && heights[i][j] <= heights[i][j-1] { // 左
-			dfs(i, j-1, res)
-		}
-		if j < len(heights[i])-1 && heights[i][j] <= heights[i][j+1] { // 右
-			dfs(i, j+1, res)
-		}
-	}
-
 	res := make([][]bool, len(heights))
 	for i := range res {
 		res[i] = make([]bool, len(heights[i]))
 	}
 
 	for i := 0; i < len(heights[len(heights)-1]); i++ { // 最后一行
-		dfs(len(heights)-1, i, res)
+		dfs(len(heights)-1, i, heights, res)
 	}
 	for i := len(heights) - 1; i >= 0; i-- { // 最后一列
-		dfs(i, len(heights[0])-1, res)
+		dfs(i, len(heights[0])-1, heights, res)
 	}
 	return res
 }
