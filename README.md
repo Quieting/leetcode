@@ -7,6 +7,7 @@
 * [4.寻找两个正序数组的中位数](1-500/1-50/find_median_sorted_arrays.go)
 * [5.最长回文子串](1-500/1-50/longest_palindrome.go)
 * [6.字符串Z型变换](1-500/1-50/convert_z_string.go)
+* [7.整数反转](1-500/1-50/reverse.go)
 * [8.字符串转换整数](1-500/1-50/my_atoi.go)
 * [172.阶乘后的零](1-500/150-200/trailing_zeroes.go)
 * [219.存在重复元素](1-500/200-250/contains_nearby_duplicate.go)
