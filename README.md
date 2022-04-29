@@ -6,6 +6,7 @@
 * [3.无重复字符的最长子串](1-500/1-50/length_of_longest_substring.go)
 * [5.最长回文子串](1-500/1-50/longest_palindrome.go)
 * [6.字符串Z型变换](1-500/1-50/convert_z_string.go)
+* [8.字符串转换整数](1-500/1-50/my_atoi.go)
 * [172.阶乘后的零](1-500/150-200/trailing_zeroes.go)
 * [219.存在重复元素](1-500/200-250/contains_nearby_duplicate.go)
 * [357.统计各位数字都不同的数字个数](1-500/350-400/count_numbers_with_unique_digits.go)
