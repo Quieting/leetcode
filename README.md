@@ -19,6 +19,7 @@
 * [413.等差数列划分 - 子数组](1-500/400-450/number_of_arithmetic_slices.go)
 * [417.太平洋大西洋水流问题](1-500/400-450/pacific_atlantic.go)
 * [427.建立四叉树](1-500/400-450/construct.go)
+* [433.最小基因变化](1-500/400-450/min_mutation.go)
 * [440.字典序的第K小数字](1-500/400-450/find_kth_number.go)
 * [446.等差数列划分 II - 子序列](1-500/400-450/number_of_arithmetic_slices2.go)
 * [537.复数乘法](500-1000/500-550/complex_number_multiply.go)
