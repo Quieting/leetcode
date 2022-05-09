@@ -22,14 +22,14 @@ package leetcode
 // 输入：s = "DDI"
 // 输出：[3,2,0,1]
 func diStringMatch(s string) []int {
-	ans := make([]int, 0, len(s)-1)
+	ans := make([]int, 0, len(s))
 
 	const bigger, smaller = 'D', 'I'
 	min := 0
 	max := len(s)
 
-	for _, l := range s {
-		switch l {
+	for i := 0; i < len(s); i++ {
+		switch s[i] {
 		case bigger:
 			ans = append(ans, max)
 			max--
@@ -38,11 +38,8 @@ func diStringMatch(s string) []int {
 			min++
 		}
 	}
-	if s[len(s)-1] == bigger {
-		ans = append(ans, max)
-	} else {
-		ans = append(ans, min)
-	}
+
+	ans = append(ans, min)
 
 	return ans
 }

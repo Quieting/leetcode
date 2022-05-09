@@ -19,7 +19,7 @@ func Test_diStringMatch(t *testing.T) {
 			args: args{
 				s: "DIDIDI",
 			},
-			want: []int{6, 0, 5, 1, 4, 2},
+			want: []int{6, 0, 5, 1, 4, 2, 3},
 		},
 	}
 	for _, tt := range tests {
