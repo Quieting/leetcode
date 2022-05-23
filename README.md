@@ -48,3 +48,6 @@
 * [2038.如果相邻两个颜色均相同则删除当前颜色](2000-2500/2000-2050/winner_of_game.go)
 * [2044.统计按位或能得到最大值的子集数目](2000-2500/2000-2050/count_max_or_subsets.go)
 * [2049.统计最高分的节点数目](2000-2500/2000-2050/count_highest_score_nodes.go)
+
+### 面试
+* [一次编辑](interview/one_edit_way.go)
