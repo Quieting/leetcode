@@ -10,6 +10,7 @@
 * [7.整数反转](1-500/1-50/reverse.go)
 * [8.字符串转换整数](1-500/1-50/my_atoi.go)
 * [22.括号生成](1-500/1-50/generate_parenthesis.go)
+* [32.最长有效括号](1-500/1-50/longest_valid_parentheses.go)
 * [172.阶乘后的零](1-500/150-200/trailing_zeroes.go)
 * [200.岛屿数量](1-500/150-200/num_is_lands.go)
 * [219.存在重复元素](1-500/200-250/contains_nearby_duplicate.go)
