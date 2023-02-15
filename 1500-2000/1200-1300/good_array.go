@@ -24,47 +24,19 @@ package leetcode
 // 1 <= nums.length <= 10^5
 // 1 <= nums[i] <= 10^9
 func isGoodArray(nums []int) bool {
-	if len(nums) == 1 {
-		return false
-	}
-
-	var divisors []int
-	for i := range nums {
-		if nums[i] == nums[0] {
-			continue
+	g := 0
+	for _, x := range nums {
+		g = maxCommonivisors(g, x)
+		if g == 1 {
+			return true
 		}
-		divisors = commonDivisors(nums[i], nums[0])
-		break
 	}
-
-	if len(divisors) == 0 {
-		return true
-	}
-
-	tmp := make([]int, 0, len(divisors))
-	for _, val := range nums {
-		for _, di := range divisors {
-			if val%di != 0 {
-				continue
-			}
-			tmp = append(tmp, di)
-		}
-		divisors = tmp
-	}
-
-	return len(divisors) > 0
+	return false
 }
 
-func commonDivisors(a, b int) []int {
-	if a < b {
-		a, b = b, a
+func maxCommonivisors(a, b int) int {
+	for a != 0 {
+		a, b = b%a, a
 	}
-	divisors := make([]int, 0)
-	for b > 1 {
-		if a%b == 0 {
-			divisors = append(divisors, b)
-		}
-		a, b = b, a/b
-	}
-	return divisors
+	return b
 }

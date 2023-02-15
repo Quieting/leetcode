@@ -32,7 +32,14 @@ func Test_isGoodArray(t *testing.T) {
 			args: args{
 				nums: []int{2, 4, 6},
 			},
-			want: true,
+			want: false,
+		},
+		{
+			name: "示例4：好数组",
+			args: args{
+				nums: []int{3, 6},
+			},
+			want: false,
 		},
 	}
 	for _, tt := range tests {
