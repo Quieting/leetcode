@@ -39,7 +39,7 @@ import "math/rand"
 //
 /**
  * Your RandomizedSet object will be instantiated and called as such:
- * obj := Constructor();
+ * obj := RandomSetConstructor();
  * param_1 := obj.Insert(val);
  * param_2 := obj.Remove(val);
  * param_3 := obj.GetRandom();
@@ -50,7 +50,7 @@ type RandomizedSet struct {
 	numsIndex map[int]int // key: nums的元素值 val：nums元素值对应的下标
 }
 
-func Constructor() RandomizedSet {
+func RandomSetConstructor() RandomizedSet {
 	ins := RandomizedSet{
 		nums:      []int{},
 		numsIndex: make(map[int]int),

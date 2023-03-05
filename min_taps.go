@@ -7,7 +7,7 @@ package leetcode
 // 如果打开点 i 处的水龙头，可以灌溉的区域为 [i -  ranges[i], i + ranges[i]] 。
 // 请你返回可以灌溉整个花园的 最少水龙头数目 。如果花园始终存在无法灌溉到的地方，请你返回 -1 。
 func minTaps(n int, ranges []int) int {
-	var link = &node{
+	var link = &tapNode{
 		start: 0,
 		end:   0,
 		count: 0,
@@ -35,7 +35,7 @@ func minTaps(n int, ranges []int) int {
 	return link.count
 }
 
-func addTap(link *node, start, end int) *node {
+func addTap(link *tapNode, start, end int) *tapNode {
 	// 前一个节点覆盖新加入节点或者两个节点范围无交集
 	if link.end >= end || start > link.end {
 		return link
@@ -44,7 +44,7 @@ func addTap(link *node, start, end int) *node {
 	// 当前节点覆盖上一个节点
 	if start <= link.start {
 		if link.last == nil { // 首节点
-			return &node{
+			return &tapNode{
 				start: start,
 				end:   end,
 				last:  link,
@@ -54,7 +54,7 @@ func addTap(link *node, start, end int) *node {
 		return addTap(link.last, start, end)
 	}
 
-	return &node{
+	return &tapNode{
 		start: link.end,
 		end:   end,
 		last:  link,
@@ -62,11 +62,11 @@ func addTap(link *node, start, end int) *node {
 	}
 }
 
-type node struct {
+type tapNode struct {
 	// 当前水龙头有效区间
 	start int
 	end   int
 	count int // 当前节点数量
 
-	last *node
+	last *tapNode
 }

@@ -121,10 +121,3 @@ func balanceStringOfficial(s string) int {
 	}
 	return res
 }
-
-func min(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
-}

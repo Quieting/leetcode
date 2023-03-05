@@ -55,13 +55,6 @@ func getSteps(cur, n int) (steps int) {
 	return
 }
 
-func min(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
-}
-
 func findKthNumber1(n int, k int) int {
 	strs := make([]string, 0, n)
 	for i := 1; i <= n; i++ {

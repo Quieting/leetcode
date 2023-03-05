@@ -11,13 +11,13 @@ package leetcode
 //
 // val：储存叶子结点所代表的区域的值。1 对应 True，0 对应 False；
 // isLeaf: 当这个节点是一个叶子结点时为 True，如果它有 4 个子节点则为 False 。
-// class Node {
+// class FourTreeNode {
 //    public boolean val;
 //    public boolean isLeaf;
-//    public Node topLeft;
-//    public Node topRight;
-//    public Node bottomLeft;
-//    public Node bottomRight;
+//    public FourTreeNode topLeft;
+//    public FourTreeNode topRight;
+//    public FourTreeNode bottomLeft;
+//    public FourTreeNode bottomRight;
 // }
 // 我们可以按以下步骤为二维区域构建四叉树：
 //
@@ -69,34 +69,34 @@ package leetcode
 // 输入：grid = [[1,1,0,0],[1,1,0,0],[0,0,1,1],[0,0,1,1]]
 // 输出：[[0,1],[1,1],[1,0],[1,0],[1,1]]
 
-type Node struct {
+type FourTreeNode struct {
 	Val         bool
 	IsLeaf      bool
-	TopLeft     *Node
-	TopRight    *Node
-	BottomLeft  *Node
-	BottomRight *Node
+	TopLeft     *FourTreeNode
+	TopRight    *FourTreeNode
+	BottomLeft  *FourTreeNode
+	BottomRight *FourTreeNode
 }
 
 type point struct {
 	i, j int // i: 行 j: 列
 }
 
-func construct(grid [][]int) *Node {
+func construct(grid [][]int) *FourTreeNode {
 	if len(grid) == 1 {
-		return &Node{
+		return &FourTreeNode{
 			IsLeaf: true,
 			Val:    false,
 		}
 	}
 
 	prefixSumGrid := PrefixSum(grid)
-	ans := &Node{
+	ans := &FourTreeNode{
 		IsLeaf: false,
 		Val:    false,
 	}
-	var dfs func(left, right point, n *Node)
-	dfs = func(left, right point, n *Node) {
+	var dfs func(left, right point, n *FourTreeNode)
+	dfs = func(left, right point, n *FourTreeNode) {
 		// 判断当前区域网格值是否一致
 		if area := filedArea(prefixSumGrid, left, right); area == 0 ||
 			area == (right.i-left.i+1)*(right.j-left.j+1) {
@@ -116,19 +116,19 @@ func construct(grid [][]int) *Node {
 		p2 := point{p1.i + 1, p1.j + 1}
 
 		// 左上部分
-		n.TopLeft = new(Node)
+		n.TopLeft = new(FourTreeNode)
 		dfs(left, p1, n.TopLeft)
 
 		// 右上部分
-		n.TopRight = new(Node)
+		n.TopRight = new(FourTreeNode)
 		dfs(point{left.i, p2.j}, point{p1.i, right.j}, n.TopRight)
 
 		// 左下部分
-		n.BottomLeft = new(Node)
+		n.BottomLeft = new(FourTreeNode)
 		dfs(point{p2.i, left.j}, point{right.i, p1.j}, n.BottomLeft)
 
 		// 右下部分
-		n.BottomRight = new(Node)
+		n.BottomRight = new(FourTreeNode)
 		dfs(p2, right, n.BottomRight)
 	}
 	dfs(point{0, 0}, point{len(grid) - 1, len(grid) - 1}, ans)

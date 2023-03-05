@@ -87,13 +87,6 @@ func findMedianSortedArrays(m, n []int) float64 {
 	return float64(ans[0])
 }
 
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
 // twoSmaller 返回 m, n 中最小的两个元素
 func twoSmaller(m, n []int) []int {
 	if len(m) == 0 {

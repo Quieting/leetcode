@@ -12,7 +12,7 @@ func Test_construct(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want *Node
+		want *FourTreeNode
 	}{
 		{
 			name: "示例：值相等",
@@ -22,7 +22,7 @@ func Test_construct(t *testing.T) {
 					[]int{1, 1},
 				},
 			},
-			want: &Node{
+			want: &FourTreeNode{
 				IsLeaf: true,
 				Val:    true,
 			},
@@ -35,22 +35,22 @@ func Test_construct(t *testing.T) {
 					[]int{0, 1},
 				},
 			},
-			want: &Node{
+			want: &FourTreeNode{
 				IsLeaf: false,
 				Val:    false,
-				TopLeft: &Node{
+				TopLeft: &FourTreeNode{
 					IsLeaf: true,
 					Val:    true,
 				},
-				TopRight: &Node{
+				TopRight: &FourTreeNode{
 					IsLeaf: true,
 					Val:    false,
 				},
-				BottomLeft: &Node{
+				BottomLeft: &FourTreeNode{
 					IsLeaf: true,
 					Val:    false,
 				},
-				BottomRight: &Node{
+				BottomRight: &FourTreeNode{
 					IsLeaf: true,
 					Val:    true,
 				},
@@ -70,36 +70,36 @@ func Test_construct(t *testing.T) {
 					{1, 1, 1, 1, 0, 0, 0, 0},
 				},
 			},
-			want: &Node{
+			want: &FourTreeNode{
 				IsLeaf: false,
 				Val:    false,
-				TopLeft: &Node{
+				TopLeft: &FourTreeNode{
 					IsLeaf: true,
 					Val:    true,
 				},
-				TopRight: &Node{
-					TopLeft: &Node{
+				TopRight: &FourTreeNode{
+					TopLeft: &FourTreeNode{
 						IsLeaf: true,
 						Val:    false,
 					},
-					TopRight: &Node{
+					TopRight: &FourTreeNode{
 						IsLeaf: true,
 						Val:    false,
 					},
-					BottomLeft: &Node{
+					BottomLeft: &FourTreeNode{
 						IsLeaf: true,
 						Val:    true,
 					},
-					BottomRight: &Node{
+					BottomRight: &FourTreeNode{
 						IsLeaf: true,
 						Val:    true,
 					},
 				},
-				BottomLeft: &Node{
+				BottomLeft: &FourTreeNode{
 					IsLeaf: true,
 					Val:    true,
 				},
-				BottomRight: &Node{
+				BottomRight: &FourTreeNode{
 					IsLeaf: true,
 					Val:    false,
 				},

@@ -39,7 +39,7 @@ func TestRandomizedSet(t *testing.T) {
 			for i, opt := range tt.args.operates {
 				switch opt {
 				case "RandomizedSet":
-					set = Constructor()
+					set = RandomSetConstructor()
 					got = append(got, nil)
 				case "insert":
 					got = append(got, set.Insert(tt.args.args[i][0]))
