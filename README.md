@@ -50,6 +50,7 @@
 * [1238.循环码排列](circular_permutation.go)
 * [1250.检查「好数组」](good_array.go)
 * [1599.经营摩天轮的最大利润](max_profit.go)
+* [1653.使字符串平衡的最少删除次数](mininum_deletions.go)
 * [1672.最富有客户的资产总量](maximum_wealth.go)
 * [2038.如果相邻两个颜色均相同则删除当前颜色](winner_of_game.go)
 * [2044.统计按位或能得到最大值的子集数目](count_max_or_subsets.go)
